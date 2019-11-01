@@ -42,51 +42,81 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 })
 
 
-function cardCreator() {
+function cardCreator(article) {
  
-// 1. HML Marckup
+    // 1. HML Marckup
 
-    const card = document.createElement("div");
-    const headline = document.createElement("div");
-    const author = document.createElement("div");
-    const imgCont = document.createElement("div");
-    const img = document.createElement("img");
-    const span = document.createElement("span");
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const img = document.createElement('img');
+    const name = document.createElement('span');
 
-// 2. Structure Marckup
+    // 2. Structure Marckup
 
-    card.appendChild(headline);
-    card.appendChild(author);
-    author.appendChild(imgCont);
-    imgCont.appendChild(img);
-    author.appendChild(span);   
+    card.append(headline);
+    card.append(author);
+    author.append(imgContainer);
+    author.append(name);
+    imgContainer.append(img);
 
-// 3. Add some classes
+    // 3. Add some classes
 
-    card.classList.add("card");
-    headline.classList.add("headline");
-    author.classList.add("author");
-    imgCont.classList.add("img-container");
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container')
 
-// 4.Add some text
+    // 4.Add some text
 
-headline.textContent = '{Headline of article}';
-span.textContent ="By {authors name}";
+    img.src = article.authorPhoto;
+    headline.textContent = article.headline;
+    name.textContent = `By ${article.authorName}`;
+
+// // 1. HML Marckup
+
+//     const card = document.createElement("div");
+//     const headline = document.createElement("div");
+//     const author = document.createElement("div");
+//     const imgCont = document.createElement("div");
+//     const img = document.createElement("img");
+//     const span = document.createElement("span");
+
+// // 2. Structure Marckup
+
+//     card.appendChild(headline);
+//     card.appendChild(author);
+//     author.appendChild(imgCont);
+//     imgCont.appendChild(img);
+//     author.appendChild(span);   
+
+// // 3. Add some classes
+
+//     card.classList.add("card");
+//     headline.classList.add("headline");
+//     author.classList.add("author");
+//     imgCont.classList.add("img-container");
+
+// // 4.Add some text
+
+// headline.textContent = '{Headline of article}';
+// span.textContent ='By {authors name}';
 
 
-// 5. Attributes
+// // 5. Attributes
 
-img.setAttribute('src', imgCont);
+// img.setAttribute('src', imgCont);
 
 
 return card;
 
 }
 
-const card = document.querySelector('.card-container');
+const card = document.querySelector('.articles');
 
-card.forEach(info => {
-    return card.append(cardCreator(info.card , info.headline, info.author, info.image, info.authorimage, info.authorname))
-});
+// card.forEach(info => {
+//     return card.append(cardCreator(articles));
+// });
 
 
