@@ -25,26 +25,25 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
 // .then(response => console.log(response.data))
 
-.then((response) => {
-    console.log(response.data.articles)
+.then(response=>{
 
-    let mainCardContainer = document.querySelector('.cards-container')
-    console.log(articles);
+    const allArticlesTypes = Object.keys(response.data.articles);
 
-    for (let article of articles[key]) {
-        let cardComponent = articleCardCreator(articles);
-        mainCardContainer.appendChild(cardComponent);
-    }   
+    for(let i=0; i< allArticlesTypes.length; i++){
 
+        response.data.articles[allArticlesTypes[i]].map((articleType)=>{
+
+            const cardContainer = document.querySelector('.cards-container')
+            const createdCard = cardCreator(articleType);
+            cardContainer.appendChild(createdCard);
+            
+        })
+    }
 })
 
 
-
-
 function cardCreator() {
-
-const cardcontainer = document.querySelector('.cards-container')
-
+ 
 // 1. HML Marckup
 
     const card = document.createElement("div");
@@ -74,8 +73,20 @@ const cardcontainer = document.querySelector('.cards-container')
 headline.textContent = '{Headline of article}';
 span.textContent ="By {authors name}";
 
+
+// 5. Attributes
+
+img.setAttribute('src', imgCont);
+
+
 return card;
 
 }
+
+const card = document.querySelector('.card-container');
+
+card.forEach(info => {
+    return card.append(cardCreator(info.card , info.headline, info.author, info.image, info.authorimage, info.authorname))
+});
 
 
