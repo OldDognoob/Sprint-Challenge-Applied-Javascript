@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The Document Object Model (DOM) is an interface for web pages. Its an application programming interface (API) allowing to read and manipulate the structure, the style to the page by removing and adding different contents.
+
 2. What is an event?
+
+Event is the result of an action mabe by a user or a browser that manipulates or interacts with a page.
 
 3. What is an event listener?
 
+Is the way of knowing how the browser tacking events in a particular way.
+
 4. Why would we convert a NodeList into an Array?
 
+We convert it in an array in order to have access to methods such as , Map, forEach etc.
+
 5. What is a component?
+
+Component is a small reusable bundle of functionality allowing to create reusable custom elements in order for us to utilize them in our pages.
 
 ### Git Set up
 
