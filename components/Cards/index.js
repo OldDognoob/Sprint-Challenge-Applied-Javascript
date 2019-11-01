@@ -24,20 +24,58 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
 
 // .then(response => console.log(response.data))
-.then (response =>{
 
-    const cardsContainer = document.querySelector('.cards-container');
+.then((response) => {
+    console.log(response.data.articles)
 
-    const articlesObject = response.data.articles;
+    let mainCardContainer = document.querySelector('.cards-container')
+    console.log(articles);
 
-    const articlesTypes = Object.keys(articlesObject);
+    for (let article of articles[key]) {
+        let cardComponent = articleCardCreator(articles);
+        mainCardContainer.appendChild(cardComponent);
+    }   
 
-    articlesTypes.forEach(article => {
-        for(let i=0; i< article.length; i++){
-            cardsContainer(article[i]);
-        }
-    })
 })
-.catch (error =>{
-  console.log(error);
-});
+
+
+
+
+function cardCreator() {
+
+const cardcontainer = document.querySelector('.cards-container')
+
+// 1. HML Marckup
+
+    const card = document.createElement("div");
+    const headline = document.createElement("div");
+    const author = document.createElement("div");
+    const imgCont = document.createElement("div");
+    const img = document.createElement("img");
+    const span = document.createElement("span");
+
+// 2. Structure Marckup
+
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgCont);
+    imgCont.appendChild(img);
+    author.appendChild(span);   
+
+// 3. Add some classes
+
+    card.classList.add("card");
+    headline.classList.add("headline");
+    author.classList.add("author");
+    imgCont.classList.add("img-container");
+
+// 4.Add some text
+
+headline.textContent = '{Headline of article}';
+span.textContent ="By {authors name}";
+
+return card;
+
+}
+
+
