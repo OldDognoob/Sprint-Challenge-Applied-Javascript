@@ -11,9 +11,6 @@
 
 // Making API request
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
-
-// .then(staff => console.log(staff))
-
 .then(staff => staff.data.topics.forEach(element => new Tab(element)))
 
 function Tab(tabname){

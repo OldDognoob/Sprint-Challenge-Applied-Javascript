@@ -17,3 +17,55 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+  //2. You will need to grab a reference to all of the images
+  //add images in an array
+   const imgIndex = ["./assets/carousel/mountains.jpeg","./assets/carousel/computer.jpeg","./assets/carousel/trees.jpeg","./assets/carousel/turntable.jpeg"]
+   
+
+    
+
+
+   //1. You will need to write a function that creates the carousel component.
+
+function carouselCreator(){
+  // 1. Create an HTML Marckup
+   
+ 
+   const carousel = document.createElement('div');
+   const leftbutton = document.createElement('div');
+   const img1 = document.createElement('img');
+   const img2 = document.createElement('img');
+   const img3 = document.createElement('img');
+   const img4 = document.createElement('img');
+   const rightbutton = document.createElement('div');
+ // 2. Define HTML structure
+  carousel.appendChild(leftbutton);
+  carousel.appendChild(rightbutton);
+  carousel.appendChild(img1);
+  carousel.appendChild(img2);
+  carousel.appendChild(img3);
+  carousel.appendChild(img4);
+
+ // 3. Add some classes
+ carousel.classList.add('carousel');
+ leftButton.classList.add('left-button');
+ rightButton.classList.add('right-button');
+ // 4. Add some content
+ leftButton.textContent = '\u25BA';
+ rightButton.textContent = '\u25BC';
+ //5. Add some functionality
+ 
+ 
+ 
+ return carouselCreator;
+  }
+  
+  const carouselContainer = document.querySelector(".carousel-container");
+ 
+  // 6 .Generate
+
+  carouselContainer.append(carouselCreator(imgIndex));
+
+  console.log(carouselConatiner);

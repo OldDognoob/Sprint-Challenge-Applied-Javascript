@@ -15,23 +15,23 @@ function Header() {
       
 const headercontainer = document.querySelector(".header-container") 
 
-const header = document.createElement('div')
-const span1 = document.createElement('span')  
-const h1 = document.createElement('h1')
-const span2 = document.createElement('span')
+const header = document.createElement('div');
+const span1 = document.createElement('span');
+const h1 = document.createElement('h1');
+const span2 = document.createElement('span');
 
 // 2. Define HTML structure
 
-headercontainer.appendChild(header)
-header.appendChild(span1)
-header.appendChild(h1)
-header.appendChild(span2)
+headercontainer.appendChild(header);
+header.appendChild(span1);
+header.appendChild(h1);
+header.appendChild(span2);
 
 // 3. Add some classes
 
-header.classList.add('header')
-span1.classList.add('date')
-span2.classList.add('temp')
+header.classList.add('header');
+span1.classList.add('date');
+span2.classList.add('temp');
 
 
 // 4. Add some content

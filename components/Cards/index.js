@@ -74,40 +74,6 @@ function cardCreator(article) {
     headline.textContent = article.headline;
     name.textContent = `By ${article.authorName}`;
 
-// // 1. HML Marckup
-
-//     const card = document.createElement("div");
-//     const headline = document.createElement("div");
-//     const author = document.createElement("div");
-//     const imgCont = document.createElement("div");
-//     const img = document.createElement("img");
-//     const span = document.createElement("span");
-
-// // 2. Structure Marckup
-
-//     card.appendChild(headline);
-//     card.appendChild(author);
-//     author.appendChild(imgCont);
-//     imgCont.appendChild(img);
-//     author.appendChild(span);   
-
-// // 3. Add some classes
-
-//     card.classList.add("card");
-//     headline.classList.add("headline");
-//     author.classList.add("author");
-//     imgCont.classList.add("img-container");
-
-// // 4.Add some text
-
-// headline.textContent = '{Headline of article}';
-// span.textContent ='By {authors name}';
-
-
-// // 5. Attributes
-
-// img.setAttribute('src', imgCont);
-
 
 return card;
 
@@ -115,8 +81,5 @@ return card;
 
 const card = document.querySelector('.articles');
 
-// card.forEach(info => {
-//     return card.append(cardCreator(articles));
-// });
 
 
